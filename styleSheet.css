@@ -3,7 +3,7 @@ h1 {
   padding-left: 120px; /*top | bottom | left | right*/
 }
 
-blockquote {
+h1 {
   background: rgb(58, 115, 201);
   height: 60px;
   width: 400px;
