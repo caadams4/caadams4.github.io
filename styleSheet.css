@@ -3,6 +3,10 @@ h1 {
   padding: 0 0 120px 0; /*top | bottom | left | right*/
 }
 
+body {
+    background-image: url(xp.jfif);
+}
+
 .businessCard {
   left: 60px;
   border-color: black;
