@@ -1,9 +1,11 @@
 h1 {
-  color: blue;
+  color: white;
+  fill: rgb(37, 106, 196)
   padding: 0 0 120px 0; /*top | bottom | left | right*/
 }
 
 .businessCard {
-  position: relative;
   left: 60px;
+  border-color: black;
+  fill: rgb(250, 248, 214);
 }
