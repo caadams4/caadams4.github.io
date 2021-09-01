@@ -1,12 +1,13 @@
 h1 {
   color: white;
-  padding-left: 120px; /*top | bottom | left | right*/
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
 h1 {
-  background: rgb(58, 115, 201);
+  background: rgb(30, 84, 165);
   height: 60px;
-  width: 400px;
+  width: 350px;
 }
 
 body {
