@@ -15,6 +15,14 @@ body {
   background-image: url(xp.jfif);
 }
 
+likeDis {
+  color: beige;
+}
+
+/*
+<button class="btn btn-primary shop-item-button" type="button">Add</button>
+*/
+
 /*
 .businessCard {
   left: 60px;

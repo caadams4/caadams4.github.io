@@ -1,29 +1,33 @@
-let x = 2;
-let y = 1;
+likes = 0;
 
-if (x > y) {
-    console.log("x is greater");
-} else {
-    console.log("y is greater");
-}
-var z = "reet";
-
-
-
-
-
-function thePerfectDrink(base,alc) {
-    //base and alc are ounces of liquid
-    //base should be coke or re bull
-    //alc is voka or whiskey
-    //if base:alc ratio < 3, dilution is required
-    let ratio = base/alc;
-    if (ratio < 3) {                                //decision -> is the ratio < 3?
-        console.log("dilute the solution!");            //prints 
-    } else {
-        console.log("Serve it up!");
-    }                                               //if the above decision is false,
-    return;                                             //prints 
+function likeBtn(event) {
+    likes++;
+    updateLikes();
+    return;
 }
 
-thePerfectDrink(3,3);
+function updateLikes() {
+    //show likes
+    document.getElementsByClassName('likeDis')[0].innerHTML = $ + likes;
+}
+
+
+/*
+let arr = [{name: "charlie", age: 26},{name:"jack", age:24},{name: "beau", age:24},{name: "ben", age:13}]
+undefined
+arr.sort(el=>el.age)
+(4) [{…}, {…}, {…}, {…}]
+0: {name: 'charlie', age: 26}
+1: {name: 'jack', age: 24}
+2: {name: 'beau', age: 24}
+3: {name: 'ben', age: 13}
+length: 4
+[[Prototype]]: Array(0)
+arr.filter(el=>el.age >= 21)
+(3) [{…}, {…}, {…}]
+0: {name: 'charlie', age: 26}
+1: {name: 'jack', age: 24}
+2: {name: 'beau', age: 24}
+length: 3
+[[Prototype]]: Array(0)
+*/
