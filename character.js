@@ -8,14 +8,17 @@ class Likes extends React.Component {
         super(props);
         this.state = {
             likeNum: 0,
+            liked: false,
         };
     }
 
     render() {
-        <button onClick={this.increase}>
-            Likes: {likeNum++}
-        </button>
+        if (liked) {
+            <button onClick={this.increase}>
+                Likes: {likeNum++}
+            </button>
         return;
+        }
     }
 
     increase() {
