@@ -1,16 +1,27 @@
-likes = 0;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './styleSheet.css';
 
-function likeBtn(event) {
-    document.getElementsByName()
-    updateLikes();
-    return;
+class Likes extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            likeNum: 0,
+        };
+    }
+
+    render() {
+        <button onClick={this.increase}>
+            Likes: {likeNum++}
+        </button>
+        return;
+    }
+
+    increase() {
+        this.likeNum++;
+    }
 }
-
-function updateLikes() {
-    //show likes
-    document.getElementsByClassName('likeDis')[0].innerHTML = $ + likes;
-}
-
 
 
 
