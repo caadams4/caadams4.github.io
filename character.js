@@ -23,6 +23,7 @@ class Likes extends React.Component {
 
     increase() {
         this.likeNum++;
+        alert(likeNum)
     }
 }
 
