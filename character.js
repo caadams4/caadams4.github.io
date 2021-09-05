@@ -1,7 +1,7 @@
 likes = 0;
 
 function likeBtn(event) {
-    likes++;
+    document.getElementsByName()
     updateLikes();
     return;
 }
@@ -10,6 +10,8 @@ function updateLikes() {
     //show likes
     document.getElementsByClassName('likeDis')[0].innerHTML = $ + likes;
 }
+
+
 
 
 /*
