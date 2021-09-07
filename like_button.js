@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from 'react';
+
 counter = 0;
 var clickHandler = function(eventObject) {
   counter++;
@@ -6,8 +8,4 @@ var clickHandler = function(eventObject) {
 
 document.querySelector("#like_button").addEventListener("click",clickHandler);  //listens for clicks
 
-array1 = ["xcom","ycom","zcom"];
 
-map1 = array1.map(array1.toUpperCase());
-
-console.log(map1);
