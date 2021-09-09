@@ -17,6 +17,14 @@ h1 {
   font-weight: bold;
 }
 
+.Calculator {
+  background: rgb(63, 63, 63);
+  border: 1px solid rgb(0, 0, 0);
+  line-height: 180px;
+  height: 180px;
+  width: 180px;
+}
+
 .calc_button {
   background: rgb(211, 211, 212);
   border: 1px solid rgb(0, 0, 0);
