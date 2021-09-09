@@ -11,11 +11,14 @@ h1 {
   width: 500px;
 }
 
-likeDis {
-  color: beige;
+#like_button {
+  background-color: rgb(89, 168, 241);
+  color: rgb(255, 255, 255);
+  font: comic;
+  font-weight: bold;
 }
 
-button {
+.calc_button {
   background: rgb(182, 182, 182);
   border: 1px solid rgb(0, 0, 0);
   float: left;
@@ -30,11 +33,11 @@ button {
   width: 40px;
 }
 
-.button:after {
+.calc_button:after {
   content: "";
 }
 
-.board-row:after {
+.CalcRow:after {
   clear: both;
   content: "";
   display: table;
