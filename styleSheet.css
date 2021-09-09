@@ -12,9 +12,8 @@ h1 {
 }
 
 #like_button {
-  background-color: rgb(89, 168, 241);
-  color: rgb(255, 255, 255);
-  font: comic;
+  color: rgb(241, 231, 201);
+  font: georgia;
   font-weight: bold;
 }
 
