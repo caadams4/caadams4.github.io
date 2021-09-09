@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+
 
 counter = 0;
 var clickHandler = function(eventObject) {
@@ -9,6 +7,7 @@ var clickHandler = function(eventObject) {
 }
 
 document.querySelector("#like_button").addEventListener("click",clickHandler);  //listens for clicks
-document.querySelector("#calc1").addEventListener("click",clickHandler);
+
+document.getElementById(calc1).addEventListener("click")
 
 
