@@ -5,8 +5,8 @@ var likeHandler = function(eventObject) {
   counter++;
   document.querySelector("#likes").innerText = "Likes: " + counter;             //displays likes on html page
 }
-document.querySelector("#likes").innerText = "Likes: " + counter;
 document.querySelector("#like_button").addEventListener("click",likeHandler);  //listens for clicks
 
-one = document.querySelector("#like_button").addEventListener("click",clickHandler);
+
+
 

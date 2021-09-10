@@ -11,6 +11,9 @@ h1 {
   width: 500px;
 }
 
+body {
+}
+
 #like_button {
   color: rgb(211, 161, 12);
   font: georgia;
@@ -29,6 +32,7 @@ h1 {
   background-color: rgb(146, 173, 123);
   border: 1px solid rgb(0, 0, 0);
   margin-left: 1px;
+  margin-top: 1px;
   line-height: 192px;
   height: 38px;
   width: 156px;
