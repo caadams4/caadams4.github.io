@@ -1,13 +1,12 @@
-# caadams4.github.io
-myGitPage created for a digital portfolio to document my web developer journey. 
+# My Web Developer Portfolio
+myGitPage created for a digital portfolio to document my web developer journey found at -> https://caadams4.github.io/
 
 # Change Log
-- Basics of HTML/CSS/JS -
-  -HTML- Added multiple types of text, links, and a title
-  -CSS- Added a background (shoutout to XP), changed some colors, and designed a calculator. 
-  -JS- Created a like button that increments up by one each time clicked. 
+-HTML: Added multiple types of text, links, and a title
+-Git: Added a background (shoutout to XP), changed some colors, and designed a calculator. 
+ -JS: Created a like button that increments up by one each time clicked. 
   
-- Git - Current Git Repo synchronised with VS Code -> Github Desktop -> GitHub.com.
+-Git: Current Git Repo synchronised with VS Code -> Github Desktop -> GitHub.com.
 
 # TODO
 - Keep refining the HTML/CSS with Bootstrap. I would like the portfolio to be presentable and enjoyable to anyone who visits. 
@@ -15,7 +14,7 @@ myGitPage created for a digital portfolio to document my web developer journey.
 - Adapt JS to TypeScript in accordance with Dr. Bart's expectations. I haven't dived into TypeScript much yet.
 - Set up git to push directly from VS Code.
 - Create a Student Task Planner/Tracker
-  -Interview some classmate and determine requirements 
+  and interview some classmate and determine requirements 
 
 # Failures
 - React...trying to run when I should be crawling. After the second day of learning just what HTML/CSS/JS was, I tried jumping right into React. I didn't even understand what the DOM was yet and couldn't conceptulize how to manipulate an HTML doc with a doc.JS linked. I get it now, but I should have set the treadmill to 2mph instead of 7mph right from the start. 
