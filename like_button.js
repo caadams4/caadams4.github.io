@@ -90,6 +90,7 @@ let calcInputMinus = function(eventObject) {
   calcTmp = 0;
   minus = true;
 }
+
 let calcInputPlus = function(eventObject) {
   calcTmp2 = calcTmp;
   calcTmp = 0;
