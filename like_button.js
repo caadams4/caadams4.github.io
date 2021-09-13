@@ -1,5 +1,5 @@
 
-
+let isNeg = false;
 let counter = 0;
 let calcAns = 0;
 let calcWorking = "";
@@ -152,6 +152,7 @@ let calcInputAllClear = function(eventObject) {
   plus,minus,mult,div = false;
   document.querySelector("#CalcDisplay").innerText = calcTmp;
 }
+
 
 
 
