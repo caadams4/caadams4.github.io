@@ -1,31 +1,30 @@
-.pageHeader {
-  color: white;
-  padding-left: 150px;
-  padding-right: 150px;
-  text-align: center;
+body {
+  background-image: url("space.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1 {
-  background: rgb(30, 84, 165);
-  height: 40px;
-  width: 500px;
-}
-
-body {
-  background-image: url("https://github.com/caadams4/caadams4.github.io/blob/master/XPBackground.jpg?raw=true");
+  background-color: rgb(18, 6, 71);
 }
 
 #like_button {
   color: rgb(211, 161, 12);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
+  margin-top: 30px;
 }
 
 .Calculator {
+  margin-left: auto;
+  margin-right: auto;
   background: rgb(63, 63, 63);
   border: 1px solid rgb(0, 0, 0);
-  height: 238px;
-  width: 160px;
+  height: 280px;
+  width: 180px;
+  margin-top: 30px;
+  padding-top: 5px;
+  padding-left: 9px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
@@ -36,9 +35,10 @@ body {
   line-height: 38px;
   margin-left: 1px;
   margin-top: 1px;
-  height: 38px;
-  width: 156px;
-  font-size: 20px;
+  margin-bottom: 5px;
+  height: 60px;
+  width: 158px;
+  font-size: 16px;
   font-weight: bold;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
@@ -85,15 +85,3 @@ body {
   content: "";
   display: table;
 }
-
-/*
-<button class="btn btn-primary shop-item-button" type="button">Add</button>
-*/
-
-/*
-.businessCard {
-  left: 60px;
-  border-color: black;
-  fill: rgb(250, 248, 214);
-}
-*/
