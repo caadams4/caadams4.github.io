@@ -1,8 +1,9 @@
 
 
 let counter = 0;
-
-let calcDisp = 0;
+let calcAns = 0;
+let calcWorking = "";
+let calcDisp = "";
 let calcPow = 1;
 let calcIn = 0;
 let calcTmp = 0;
@@ -86,22 +87,26 @@ let calcInput0 = function(eventObject) {
 }
 
 let calcInputMinus = function(eventObject) {
+//  calcDisp = calcTmp + "-";
   calcTmp2 = calcTmp;
   calcTmp = 0;
   minus = true;
 }
 
 let calcInputPlus = function(eventObject) {
+//  calcDisp = calcTmp + "+";
   calcTmp2 = calcTmp;
   calcTmp = 0;
   plus = true;
 }
 let calcInputMult = function(eventObject) {
+//  calcDisp = calcTmp + "*";
   calcTmp2 = calcTmp;
   calcTmp = 0;
   mult = true;
 }
 let calcInputDiv = function(eventObject) {
+//  calcDisp = calcTmp + "/";
   calcTmp2 = calcTmp;
   calcTmp = 0;
   div = true;
