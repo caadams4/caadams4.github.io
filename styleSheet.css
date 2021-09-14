@@ -22,7 +22,7 @@ h1 {
 }
 
 .Calculator {
-  border-radius: 10px;
+  border-radius: 9px;
   margin-left: auto;
   margin-right: auto;
   background: rgb(63, 63, 63);
@@ -36,7 +36,7 @@ h1 {
 }
 
 #CalcDisplay {
-  border-radius: 10px;
+  border-radius: 9px;
   text-align: right;
   text-align: top;
   background-color: rgb(146, 173, 123);
@@ -53,7 +53,7 @@ h1 {
 }
 
 .calc_button {
-  border-radius: 5px;
+  border-radius: 4px;
   background: rgb(211, 211, 212);
   border: 1px solid rgb(0, 0, 0);
   float: left;
