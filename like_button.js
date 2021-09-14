@@ -1,115 +1,115 @@
 
-let isNeg = false;
-let counter = 0;
-let calcAns = 0;
-let calcWorking = "";
-let calcDisp = "";
-let calcPow = 1;
-let calcIn = 0;
-let calcTmp = 0;
-let calcTmp2 = 0;
-let plus,minus,mult,div = false;
+
+
+
+
+const Calculator = {
+  display: "",
+  input: 0,
+  calcTmp: 0,
+  calcTmp2: null,
+  neg: false,
+  plus: false,
+  minus: false,
+  mult: false,
+  div: false,
+  sign: false,
+};
+
+let updateCalcDisp = function(calcTmp,calcTmp2) {
+  let opDisp = "";
+  if (Calculator.plus === true) {opDisp = "+"; }
+  else if (Calculator.minus === true) {opDisp = "-"; }
+  else if (Calculator.mult === true) {opDisp = "*"; }
+  else if (Calculator.div === true) {opDisp = "/"; }
+  Calculator.display = Calculator.calcTmp + opDisp;
+  if (Calculator.calcTmp2 !== null) {
+    Calculator.display = "" + Calculator.calcTmp2 + opDisp + Calculator.calcTmp;
+  }
+  document.querySelector("#CalcDisplay").innerText = Calculator.display;
+}
 
 let calcInput = function(calcIn,calcTmp) {
-  parseInt(calcTmp);
-  parseInt(calcIn);
-  return ((calcTmp * 10) + calcIn);
-}
-let calcInput1 = function(eventObject) {
-  parseInt(calcTmp);
-  calcTmp = calcInput(1,calcTmp);
-  console.log(eventObject);
+  let input = (calcTmp * 10) + calcIn;
+  console.log(input);
   console.log(calcTmp);
-  document.querySelector("#CalcDisplay").innerText = calcTmp;  
+
+  document.querySelector("#CalcDisplay").innerText = input;
+  Calculator.calcTmp = input;
+  updateCalcDisp(input,Calculator.calcTmp);
+  return input;
+}
+
+let calcInput1 = function(eventObject) {
+  console.log(1);
+  Calculator.calcTmp = calcInput(1,Calculator.calcTmp); 
+  console.log(Calculator.calcTmp)
 }
 
 let calcInput2 = function(eventObject) {
-  calcTmp = calcInput(2,calcTmp);
-  console.log(eventObject);
-  console.log(calcTmp);
-  document.querySelector("#CalcDisplay").innerText = calcTmp;  
+  Calculator.calcTmp = calcInput(2,Calculator.calcTmp); 
 }
 
 let calcInput3 = function(eventObject) {
-  calcTmp = calcInput(3,calcTmp);
-  console.log(eventObject);
-  console.log(calcTmp);
-  document.querySelector("#CalcDisplay").innerText = calcTmp;  
+  Calculator.calcTmp = calcInput(3,Calculator.calcTmp); 
 }
 
 let calcInput4 = function(eventObject) {
-  calcTmp = calcInput(4,calcTmp);
-  console.log(eventObject);
-  console.log(calcTmp);
-  document.querySelector("#CalcDisplay").innerText = calcTmp;  
+  Calculator.calcTmp = calcInput(4,Calculator.calcTmp); 
 }
 
 let calcInput5 = function(eventObject) {
-  calcTmp = calcInput(5,calcTmp);
-  console.log(eventObject);
-  console.log(calcTmp);
-  document.querySelector("#CalcDisplay").innerText = calcTmp;  
+  Calculator.calcTmp = calcInput(5,Calculator.calcTmp); 
 }
 
 let calcInput6 = function(eventObject) {
-  calcTmp = calcInput(6,calcTmp);
-  console.log(eventObject);
-  console.log(calcTmp);
-  document.querySelector("#CalcDisplay").innerText = calcTmp;  
+  Calculator.calcTmp = calcInput(6,Calculator.calcTmp); 
 }
 
 let calcInput7 = function(eventObject) {
-  calcTmp = calcInput(7,calcTmp);
-  console.log(eventObject);
-  console.log(calcTmp);
-  document.querySelector("#CalcDisplay").innerText = calcTmp;  
+  Calculator.calcTmp = calcInput(7,Calculator.calcTmp); 
 }
 
 let calcInput8 = function(eventObject) {
-  calcTmp = calcInput(8,calcTmp);
-  console.log(eventObject);
-  console.log(calcTmp);
-  document.querySelector("#CalcDisplay").innerText = calcTmp;  
+  Calculator.calcTmp = calcInput(8,Calculator.calcTmp); 
 }
 
 let calcInput9 = function(eventObject) {
-  calcTmp = calcInput(9,calcTmp);
-  console.log(eventObject);
-  console.log(calcTmp);
-  document.querySelector("#CalcDisplay").innerText = calcTmp;  
+  Calculator.calcTmp = calcInput(9,Calculator.calcTmp); 
 }
 
 let calcInput0 = function(eventObject) {
-  calcTmp = calcInput(0,calcTmp);
-  console.log(eventObject);
-  console.log(calcTmp);
-  document.querySelector("#CalcDisplay").innerText = calcTmp;  
+  Calculator.calcTmp = calcInput(0,Calculator.calcTmp); 
 }
 
 let calcInputMinus = function(eventObject) {
-//  calcDisp = calcTmp + "-";
-  calcTmp2 = calcTmp;
-  calcTmp = 0;
-  minus = true;
+  if (Calculator.minus === true) {return;}
+  Calculator.calcTmp2 = Calculator.calcTmp;
+  Calculator.calcTmp = "";
+  Calculator.minus = true;
+  updateCalcDisp(Calculator.calcTmp2,Calculator.calcTmp)
 }
 
 let calcInputPlus = function(eventObject) {
-//  calcDisp = calcTmp + "+";
-  calcTmp2 = calcTmp;
-  calcTmp = 0;
-  plus = true;
+  if (Calculator.plus === true) {return;}
+  Calculator.calcTmp2 = Calculator.calcTmp;
+  Calculator.calcTmp = "";
+  Calculator.plus = true;
+  updateCalcDisp(Calculator.calcTmp2,Calculator.calcTmp)
 }
 let calcInputMult = function(eventObject) {
-//  calcDisp = calcTmp + "*";
-  calcTmp2 = calcTmp;
-  calcTmp = 0;
-  mult = true;
+if (Calculator.mult === true) {return;}
+Calculator.calcTmp2 = Calculator.calcTmp;
+Calculator.calcTmp = "";
+Calculator.mult = true;
+updateCalcDisp(Calculator.calcTmp2,Calculator.calcTmp)
 }
 let calcInputDiv = function(eventObject) {
-//  calcDisp = calcTmp + "/";
-  calcTmp2 = calcTmp;
-  calcTmp = 0;
-  div = true;
+  if (Calculator.div === true) {return;}
+  Calculator.calcTmp2 = Calculator.calcTmp;
+  Calculator.calcTmp = "";
+  Calculator.div = true;
+  updateCalcDisp(Calculator.calcTmp2,Calculator.calcTmp)
 }
 
 let calcInputEquals = function(eventObject) {
@@ -157,7 +157,7 @@ let calcInputAllClear = function(eventObject) {
 
 
 
-document.querySelector("#CalcDisplay").innerText = calcTmp;  
+//document.querySelector("#CalcDisplay").innerText = calcTmp;  
 
 var likeHandler = function(eventObject) {
   console.log(eventObject);
@@ -189,7 +189,7 @@ document.querySelector("#calcAllClear").addEventListener("click",calcInputAllCle
 
 
 
-calcInput(calcIn,calcTmp) 
+//calcInput(calcIn,calcTmp) 
 
 
 
