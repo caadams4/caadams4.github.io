@@ -38,7 +38,7 @@ h1 {
 #CalcDisplay {
   border-radius: 9px;
   text-align: right;
-  text-align: top;
+  text-align: right;
   background-color: rgb(146, 173, 123);
   border: 1px solid rgb(0, 0, 0);
   line-height: 38px;
