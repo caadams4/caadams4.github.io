@@ -2,14 +2,18 @@
 myGitPage created for a digital portfolio to document my web developer journey found at -> https://caadams4.github.io/
 
 # Change Log
------Milestone 2-----
-- HTML/CSS: Integrated bootstrap to HTML tags and polished design for a more visual appeal (2.5 hours)
+--------------------Milestone 2--------------------
+- HTML/CSS: Integrated bootstrap to HTML tags and polished design for a more visual appeal (2.5 hours) 
+https://github.com/caadams4/caadams4.github.io/blob/master/index.html
+https://github.com/caadams4/caadams4.github.io/blob/master/styleSheet.css
 - JavaScript: Created a mostly functional calculator and like button! (8 hours)
+https://github.com/caadams4/caadams4.github.io/blob/master/like_button.js
 - Downloaded git (command line) to computer, used for a few local commits, also using Github Desktop. (.75 hours)
-- Started to redesign the calculator with React Hooks + Typescript, I didn't understand how to structure the calculator before today's lecture. (1.5 hours)
+- Started to redesign the calculator with React Hooks + Typescript, I didn't understand how to structure the calculator before today's lecture. (1.5 hours)                     
+https://github.com/caadams4/caadams4.github.io/blob/master/App.tsx
 
 
------Milestone 1-----
+--------------------Milestone 1--------------------
 - HTML: Added multiple types of text, links, and a title
 - Git: Added a background (shoutout to XP), changed some colors, and designed a calculator. 
 - JS: Created a like button that increments up by one each time clicked. 
