@@ -169,6 +169,9 @@ let calcInputNeg = function(eventObject) {
     alert("going dumb")
     Calculator.calcTmp2 *= -1;
     updateCalcDisp(Calculator.calcTmp);
+  } else {
+    Calculator.calcTmp *= -1;
+    updateCalcDisp(Calculator.calcTmp);
   }
 }
 
