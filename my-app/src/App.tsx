@@ -6,7 +6,7 @@ import { Buttons } from './components/Buttons'
 
 
 function App(): JSX.Element  {
-  const [display, setDisplay] = useState<string>("Welcome!");
+  const [display, setDisplay] = useState<string>("Welcome!")
         // Make Func a JSX.Element
         // Declare each state its type!
         // Ex <Display consumes Screen calcDisplay and renders the displayText
@@ -14,7 +14,7 @@ function App(): JSX.Element  {
     <div className="App">
       <div>
           <Display text={display}></Display>
-          <Buttons change={setDisplay}> </Buttons>
+          <Buttons change={setDisplay}></Buttons>
       </div>
     </div>
   );
