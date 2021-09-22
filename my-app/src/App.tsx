@@ -13,8 +13,8 @@ function App(): JSX.Element  {
   return (
     <div className="App">
       <div>
-          <Display text={display}></Display>
-          <Buttons change={setDisplay}></Buttons>
+          <Display></Display>
+          <Buttons></Buttons>
       </div>
     </div>
   );

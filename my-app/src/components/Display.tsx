@@ -4,10 +4,10 @@ import { Screen } from '../interfaces/Screen'
 
 
 
-export const Display = ({text}: {text: string}): JSX.Element => {
+export const Display = (): JSX.Element => {
     return (
         <div>
-            {text}
+
         </div>
     )
 }
