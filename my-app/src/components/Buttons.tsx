@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { useState } from 'react';
 <<<<<<< Updated upstream
 
@@ -130,8 +131,13 @@ export const Buttons = (props: {intInput: (incomingInput: number) => void, opInp
   
 >>>>>>> Stashed changes
 
+=======
+import { Button } from "./Button"
+>>>>>>> Stashed changes
 
+export function Buttons(): JSX.Element {
     return (
+<<<<<<< Updated upstream
         <div>
 <<<<<<< Updated upstream
             <div className="buttonRow">
@@ -198,5 +204,9 @@ export const Buttons = (props: {intInput: (incomingInput: number) => void, opInp
         </div>
     )   
 
+>>>>>>> Stashed changes
+=======
+        <Button></Button>
+    )   
 >>>>>>> Stashed changes
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { displayPartsToString } from 'typescript';
+<<<<<<< Updated upstream
 import { Display } from './components/Display'
 import { Buttons } from './components/Buttons'
 import {handleInput} from './Utils/Operations' 
@@ -14,16 +15,31 @@ function App(): JSX.Element  {
   
   console.log(intInput)
 
+=======
+import { Buttons } from './components/Buttons';
+import { Display } from './components/Display';
+
+
+
+
+
+function App(): JSX.Element  {
+>>>>>>> Stashed changes
 
   return (
     <div className="App">
       <div>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
           <Display text={display}></Display>
           <Buttons change={setDisplay}></Buttons>
 =======
           <Display calcSays = {display}></Display>
           <Buttons intInput = {setIntInput} opInput = {setDisplay}></Buttons>
+>>>>>>> Stashed changes
+=======
+        <Display></Display>
+        <Buttons></Buttons>
 >>>>>>> Stashed changes
       </div>
     </div>

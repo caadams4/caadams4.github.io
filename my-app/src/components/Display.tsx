@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { useState } from 'react';
 import { Screen } from '../interfaces/Screen'
 
@@ -17,4 +18,10 @@ export const Display = ({calcSays}: {calcSays: string}): JSX.Element =>  {
 >>>>>>> Stashed changes
         </div>
     )
+=======
+export function Display(): JSX.Element {
+    return (
+        <div>Calc Display!</div>
+    )   
+>>>>>>> Stashed changes
 }
