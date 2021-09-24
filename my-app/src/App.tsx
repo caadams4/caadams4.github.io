@@ -1,49 +1,31 @@
 import React, { useState } from 'react';
-import { displayPartsToString } from 'typescript';
-<<<<<<< Updated upstream
 import { Display } from './components/Display'
 import { Buttons } from './components/Buttons'
 import {handleInput} from './Utils/Operations' 
 
 
 function App(): JSX.Element  {
-  const [display, setDisplay] = useState<string>("A-HOI");
-  const [intInput, setIntInput] = useState<number>(0);
-  const [intTmp, setIntTmp] = useState<number>(0);
-  const [dec, setDec] = useState<boolean>(false);
+  const [workingTotal, setWorkingTotal] = useState<string>("");
+  const [calculatingTotal, setCalculatingTotal] = useState<string>("");
   const [operation, setOperation] = useState<string>("");
+
+  const handleInput = (input: string) => {
+    setWorkingTotal(workingTotal+input);
+    const calcData = {workingTotal, calculatingTotal, operation};
+    setCalculatingTotal(workingTotal);
+  }
   
-  console.log(intInput)
 
-=======
-import { Buttons } from './components/Buttons';
-import { Display } from './components/Display';
-
-
-
-
-
-function App(): JSX.Element  {
->>>>>>> Stashed changes
 
   return (
     <div className="App">
       <div>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-          <Display text={display}></Display>
-          <Buttons change={setDisplay}></Buttons>
-=======
-          <Display calcSays = {display}></Display>
-          <Buttons intInput = {setIntInput} opInput = {setDisplay}></Buttons>
->>>>>>> Stashed changes
-=======
-        <Display></Display>
-        <Buttons></Buttons>
->>>>>>> Stashed changes
+          <Display calcSays = {calculatingTotal}></Display>
+          <Buttons newInput = {handleInput} ></Buttons>
       </div>
     </div>
   );
 }
+
 
 export default App;

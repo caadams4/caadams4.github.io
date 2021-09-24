@@ -1,7 +1,10 @@
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 
-export function Button(): JSX.Element {
+export const Button = (props: {val: string,inputFromBtn: (incomingInput: string) => void}): JSX.Element => {
+
     return (
-        <button> A-hoi! </button>
-    )   
+        <button onClick={()=>props.inputFromBtn(props.val)}> {props.val} </button>
+    );
 }
