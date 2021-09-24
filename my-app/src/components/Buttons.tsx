@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+<<<<<<< Updated upstream
 
 
 export const Buttons = (props: {change: (text: string) => void}): JSX.Element => {
@@ -56,10 +57,83 @@ export const Buttons = (props: {change: (text: string) => void}): JSX.Element =>
     }
 
 
+=======
+import PropTypes from 'prop-types';
+import {handleInput,solve,clear} from '../Utils/Operations' 
+
+
+export const Buttons = (props: {intInput: (incomingInput: number) => void, opInput: (setOperation: string) => void}): JSX.Element => {
+
+    const [intInput, setIntInput] = useState<number>(0);
+    const [intTmp, setIntTmp] = useState<number>(0);
+    const [dec, setDec] = useState<boolean>(false);
+    const [operation, setOperation] = useState<string>("");
+
+
+
+
+    function btnPress(input: string): void {
+        let num = 0;
+        switch (input) {
+            case ("AC") : {
+                //TODO all clear function
+                break;
+            }
+            case ("C") : {
+                //TODO all clear function
+                break;
+            }            
+            case ("*") : {
+                //TODO all clear function
+                break;
+            }            
+            case ("/") : {
+                //TODO all clear function
+                break;
+            }            
+            case ("+") : {
+                //TODO all clear function
+                break;
+            }            
+            case ("-") : {
+                //TODO all clear function
+                break;
+            }            
+            case ("(-)") : {
+                //TODO all clear function
+                break;
+            }
+                        
+            case ("1") : {
+                console.log("input")
+                console.log(input)
+                let numInput: number = +input;
+                //console.log(input)
+                handleIntInput(numInput)
+                break;
+            }
+        }
+    }
+        
+    function handleIntInput(numInput: number) {
+        let tmp = (intTmp * 10) + numInput
+        console.log("handling input")
+        console.log(tmp)
+        setIntTmp(tmp)
+        console.log(intTmp)
+        let tmpstr = "" + intTmp;
+        props.opInput(tmpstr)
+    }
+
+    
+    
+  
+>>>>>>> Stashed changes
 
 
     return (
         <div>
+<<<<<<< Updated upstream
             <div className="buttonRow">
                 <button onClick={() => handleInput(0)}>AC</button>
                 <button onClick={() => handleInput(0)}>C</button>
@@ -91,4 +165,38 @@ export const Buttons = (props: {change: (text: string) => void}): JSX.Element =>
             </div>
         </div>
     )
+=======
+            <div>
+                <button onClick={() => clear(true)}>AC</button>  
+                <button onClick={()=> clear(false)}>C</button>  
+                <button onClick={() => solve}>=</button>          
+            </div>
+            <div>
+                <button onClick={()=>props.intInput(9)}>9</button>   
+                <button onClick={()=>props.intInput(8)}>8</button>   
+                <button onClick={()=>props.intInput(7)}>7</button>   
+                <button onClick={()=>props.opInput("*")}>*</button>   
+            </div>
+            <div>
+                <button onClick={()=>props.intInput(6)}>6</button>   
+                <button onClick={()=>props.intInput(5)}>5</button>   
+                <button onClick={()=>props.intInput(4)}>4</button>   
+                <button onClick={()=>props.opInput("/")}>/</button> 
+            </div>
+            <div>
+                <button onClick={()=>props.intInput(3)}>3</button>   
+                <button onClick={()=>props.intInput(2)}>2</button>   
+                <button onClick={()=>btnPress("1")}>1</button>   
+                <button onClick={()=>props.opInput("+")}>+</button> 
+            </div>
+            <div>
+                <button onClick={()=>props.opInput("(-)")}>(-)</button>   
+                <button onClick={()=>props.intInput(0)}>0</button>   
+                <button onClick={()=>props.opInput(".")}>.</button>   
+                <button onClick={()=>props.opInput("-")}>-</button> 
+            </div>
+        </div>
+    )   
+
+>>>>>>> Stashed changes
 }
