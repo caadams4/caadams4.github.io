@@ -7,6 +7,7 @@ function App(): JSX.Element  {
   const [workingTotal, setWorkingTotal] = useState<string>("");
   const [calculatingTotal, setCalculatingTotal] = useState<string>("");
   const [operation, setOperation] = useState<string>("");
+  //TODO create a stringbuilder for calc display
 
   const handleInput = (input: string) => {
     let calcData = {workingTotal, calculatingTotal, operation};

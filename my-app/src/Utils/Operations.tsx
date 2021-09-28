@@ -7,25 +7,46 @@ function handleOperation(data: {workingTotal: string, calculatingTotal: string, 
     switch(data.operation) {
         case ("+"): {
             calcTotal += workingTotal;
+            data.workingTotal = "" + calcTotal;
             break;
         } 
         case ("-"): {
             calcTotal -= workingTotal;
+            data.workingTotal = "" + calcTotal;
             break;
         }
         case ("*"): {
             calcTotal *= workingTotal;
+            data.workingTotal = "" + calcTotal;
             break;
         }
         case ("/"): {
             calcTotal /= workingTotal;
+            data.workingTotal = "" + calcTotal;
             break;
         }
     }
     data.calculatingTotal = "";
-    data.calculatingTotal += calcTotal;
+    data.operation = "";
     return data;
 }
+
+function handleDecimal(input: string,data: {workingTotal: string, calculatingTotal: string, operation: string}) {
+    let workingTotal: number =+ data.workingTotal;
+    let inputNum: number =+ input;
+    console.log(input)
+    console.log(workingTotal)
+
+    workingTotal = workingTotal + inputNum * 0.1;
+    
+    console.log(workingTotal)
+
+    data.workingTotal = "" + workingTotal;
+    return data;
+
+
+}
+
 
 export function offShoreDecisionMaker(input: string,data: {workingTotal: string, calculatingTotal: string, operation: string}) {
     //TODO I think i have to break up the functions. OperationDecisionMaker, calculationsDecisionMaker
@@ -36,29 +57,29 @@ export function offShoreDecisionMaker(input: string,data: {workingTotal: string,
             data.operation = input;
             data.calculatingTotal = data.workingTotal;
             data.workingTotal = "";
-            return handleOperation(data);
+            break;
         }
         case ("-"): {
             data.operation = input;
             data.calculatingTotal = data.workingTotal;
             data.workingTotal = "";
-            return handleOperation(data);
+            break;
         }
         case ("*"): {
             data.operation = input;
             data.calculatingTotal = data.workingTotal;
             data.workingTotal = "";
-            return handleOperation(data);
+            break;
         }
         case ("/"): {
             data.operation = input;
             data.calculatingTotal = data.workingTotal;
             data.workingTotal = "";
-            return handleOperation(data);
+            break;
         }
         case ("."): {
-            //TODO
-            break;
+            data.operation = input;
+            return data;
         }
         case ("(-)"): {
             //TODO
@@ -71,7 +92,13 @@ export function offShoreDecisionMaker(input: string,data: {workingTotal: string,
             break;
         }
     }
-    data.workingTotal+=input;
+    if (["1","2","3","4","5","6","7","8","9","0"].includes(input)){
+        if (data.operation === ".") {
+            handleDecimal(input, data);
+        } else {
+            data.workingTotal+=input;
+        }
+    }
     return data;
 }
 
