@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Button } from './Button';
 import { EqualsButton } from './EqualsButton';
 
 
-export const Buttons = (props: {newInput: (incomingInput: string) => void}): JSX.Element => {
+export const Buttons = (
+
+    props: {
+        newInput: (incomingInput: string) => void}
+        
+        ): JSX.Element => {
 
     return (
     <div>

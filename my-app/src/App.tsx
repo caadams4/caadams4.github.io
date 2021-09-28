@@ -13,7 +13,6 @@ function App(): JSX.Element  {
   const handleInput = (input: string) => {
 
     let calcData = {workingTotal, calculatingTotal, operation}; // create an object to store and pass the calculator data
-
     let newObj = offShoreDecisionMaker(input, calcData); // passing calcData to manipulate calculator data based on input
 
     if (input === "AC") { // clear all variables if AC pressed
