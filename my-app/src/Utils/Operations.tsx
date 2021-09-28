@@ -1,47 +1,79 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-function add(first:number, second:number): number {
-    return first + second;
-}
-
-function sub(data: {first: number, second: number}): number {
-    return data.first - data.second;
-}
-
-function mult(data: {first: number, second: number}): number {
-    return data.first * data.second;
-}
-
-function div(data: {first: number, second: number}): number {
-    return data.first / data.second;
-}
-
-export function solve() {
-
-}
-
-export function handleInput(input: number, tmp: number, neg: boolean, dec: boolean): number {
-    // When button pressed, input num added to tmp(working number waiting to be calculated)
-
-        // handles if decimal/neg are active
-    if (dec === false) {
-        tmp = (tmp * 10) + input;
-    } else {
-        tmp = (tmp * .1) + input;
+function handleOperation(data: {workingTotal: string, calculatingTotal: string, operation: string})  {
+    let calcTotal: number =+ data.calculatingTotal;
+    let workingTotal: number =+ data.workingTotal;
+    switch(data.operation) {
+        case ("+"): {
+            calcTotal += workingTotal;
+            break;
+        } 
+        case ("-"): {
+            calcTotal -= workingTotal;
+            break;
+        }
+        case ("*"): {
+            calcTotal *= workingTotal;
+            break;
+        }
+        case ("/"): {
+            calcTotal /= workingTotal;
+            break;
+        }
     }
+    data.calculatingTotal = "";
+    data.calculatingTotal += calcTotal;
+    return data;
+}
 
-    if (neg === true) {     // must turn neg false after function is returned
-        tmp *= -1;
+export function offShoreDecisionMaker(input: string,data: {workingTotal: string, calculatingTotal: string, operation: string}) {
+    //TODO I think i have to break up the functions. OperationDecisionMaker, calculationsDecisionMaker
+
+
+    switch(input) {
+        case ("+"): {
+            data.operation = input;
+            data.calculatingTotal = data.workingTotal;
+            data.workingTotal = "";
+            return handleOperation(data);
+        }
+        case ("-"): {
+            data.operation = input;
+            data.calculatingTotal = data.workingTotal;
+            data.workingTotal = "";
+            return handleOperation(data);
+        }
+        case ("*"): {
+            data.operation = input;
+            data.calculatingTotal = data.workingTotal;
+            data.workingTotal = "";
+            return handleOperation(data);
+        }
+        case ("/"): {
+            data.operation = input;
+            data.calculatingTotal = data.workingTotal;
+            data.workingTotal = "";
+            return handleOperation(data);
+        }
+        case ("."): {
+            //TODO
+            break;
+        }
+        case ("(-)"): {
+            //TODO
+            break;
+        }
+        case ("="): {
+            if (["+","-","*","/"].includes(data.operation)) {
+                return handleOperation(data);
+            }
+            break;
+        }
     }
-
-    return tmp;
+    data.workingTotal+=input;
+    return data;
 }
-
-export function clear(all: boolean) {
-    
-}
-
 
 
 

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Display } from './components/Display'
 import { Buttons } from './components/Buttons'
-import {handleInput} from './Utils/Operations' 
-
+import { offShoreDecisionMaker } from './Utils/Operations'
 
 function App(): JSX.Element  {
   const [workingTotal, setWorkingTotal] = useState<string>("");
@@ -10,10 +9,32 @@ function App(): JSX.Element  {
   const [operation, setOperation] = useState<string>("");
 
   const handleInput = (input: string) => {
-    setWorkingTotal(workingTotal+input);
-    const calcData = {workingTotal, calculatingTotal, operation};
-    setCalculatingTotal(workingTotal);
-  }
+    let calcData = {workingTotal, calculatingTotal, operation};
+    
+    let newObj = offShoreDecisionMaker(input, calcData);
+
+    setWorkingTotal(newObj.workingTotal);
+    setOperation(newObj.operation);
+    setCalculatingTotal(newObj.calculatingTotal);
+    //input goes to working total
+
+
+    //setWorkingTotal(workingTotal+input);
+    //setWorkingTotal(prevWorkingTotal=>prevWorkingTotal+input);
+    console.log(newObj);
+
+
+
+
+    
+    //offShoreDecisionMaker(input,calcData);
+
+
+    //if operation != "", calcTotal = calcWorking, calcWorking = 0
+
+    }
+
+  
   
 
 
