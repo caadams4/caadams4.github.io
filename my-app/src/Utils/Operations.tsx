@@ -34,24 +34,21 @@ function handleOperation(data: {workingTotal: string, calculatingTotal: string, 
 function handleDecimal(input: string,data: {workingTotal: string, calculatingTotal: string, operation: string}) {
     let workingTotal: number =+ data.workingTotal;
     let inputNum: number =+ input;
-    console.log(input)
-    console.log(workingTotal)
-
     workingTotal = workingTotal + inputNum * 0.1;
-    
-    console.log(workingTotal)
-
     data.workingTotal = "" + workingTotal;
     return data;
+}
 
+function handleNegative(input: string,data: {workingTotal: string, calculatingTotal: string, operation: string}) {
+    
+    //TODO Make the neg function
 
+    return data;
 }
 
 
 export function offShoreDecisionMaker(input: string,data: {workingTotal: string, calculatingTotal: string, operation: string}) {
-    //TODO I think i have to break up the functions. OperationDecisionMaker, calculationsDecisionMaker
-
-
+    
     switch(input) {
         case ("+"): {
             data.operation = input;
@@ -82,8 +79,8 @@ export function offShoreDecisionMaker(input: string,data: {workingTotal: string,
             return data;
         }
         case ("(-)"): {
-            //TODO
-            break;
+            data.operation = input;
+            return data;
         }
         case ("="): {
             if (["+","-","*","/"].includes(data.operation)) {
@@ -95,6 +92,8 @@ export function offShoreDecisionMaker(input: string,data: {workingTotal: string,
     if (["1","2","3","4","5","6","7","8","9","0"].includes(input)){
         if (data.operation === ".") {
             handleDecimal(input, data);
+        } else if (data.operation === "(-)") {
+            handleNegative(input, data);
         } else {
             data.workingTotal+=input;
         }
