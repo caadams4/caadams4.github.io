@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css'
 import { Display } from './components/Display'
 import { Buttons } from './components/Buttons'
 import { offShoreDecisionMaker } from './Utils/Operations'
@@ -9,14 +10,13 @@ function App(): JSX.Element  {
   const [operation, setOperation] = useState<string>("");
   const [calcDisp, setCalcDisp] = useState<string>("");
 
-  //TODO create a stringbuilder for calc display
-
   const handleInput = (input: string) => {
 
-    let calcData = {workingTotal, calculatingTotal, operation};
-    let newObj = offShoreDecisionMaker(input, calcData);
+    let calcData = {workingTotal, calculatingTotal, operation}; // create an object to store and pass the calculator data
 
-    if (input === "AC") {
+    let newObj = offShoreDecisionMaker(input, calcData); // passing calcData to manipulate calculator data based on input
+
+    if (input === "AC") { // clear all variables if AC pressed
       setCalculatingTotal("");
       setWorkingTotal("");
       setOperation("");
@@ -24,24 +24,18 @@ function App(): JSX.Element  {
       newObj.calculatingTotal = "";
       newObj.operation = "";
       setCalculatingTotal("");
-    } else if (input === "C") {
+    } else if (input === "C") { // clear workingTotal on C pressed
       setWorkingTotal("");
       newObj.workingTotal = "";
     }
-
-    setWorkingTotal(newObj.workingTotal);
-    setOperation(newObj.operation);
-    setCalculatingTotal(newObj.calculatingTotal);
-
+    setWorkingTotal(newObj.workingTotal);         //
+    setOperation(newObj.operation);               // updating calculator data after offShore manipulation 
+    setCalculatingTotal(newObj.calculatingTotal); // 
     console.log(newObj);
-
-    setCalcDisp(newObj.calculatingTotal+newObj.operation+newObj.workingTotal);
-
+    setCalcDisp(newObj.calculatingTotal+newObj.operation+newObj.workingTotal); // building calc display string
     }
 
-  
-  
-
+    // React; what a wild ride
 
   return (
     <div className="App">
