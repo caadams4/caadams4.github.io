@@ -32,17 +32,25 @@ function handleOperation(data: {workingTotal: string, calculatingTotal: string, 
 }
 
 function handleDecimal(input: string,data: {workingTotal: string, calculatingTotal: string, operation: string}) {
-    let workingTotal: number =+ data.workingTotal;
-    let inputNum: number =+ input;
-    workingTotal = workingTotal + inputNum * 0.1;
-    data.workingTotal = "" + workingTotal;
-    return data;
+    if (data.workingTotal.includes(".")) {
+        data.workingTotal += input;
+    } else {
+        let workingTotal: number =+ data.workingTotal;
+        let inputNum: number =+ input;
+        workingTotal = workingTotal + inputNum * 0.1;
+        data.workingTotal = "" + workingTotal;
+        return data;
+    }
 }
 
-function handleNegative(input: string,data: {workingTotal: string, calculatingTotal: string, operation: string}) {
+function handleNegative(data: {workingTotal: string, calculatingTotal: string, operation: string}) {
     
     //TODO Make the neg function
 
+    let workingTotal: number =+data.workingTotal;
+    workingTotal *= -1;
+    data.workingTotal = "" + workingTotal;
+    data.operation = "";
     return data;
 }
 
@@ -80,7 +88,7 @@ export function offShoreDecisionMaker(input: string,data: {workingTotal: string,
         }
         case ("(-)"): {
             data.operation = input;
-            return data;
+            return handleNegative(data);
         }
         case ("="): {
             if (["+","-","*","/"].includes(data.operation)) {
@@ -92,8 +100,8 @@ export function offShoreDecisionMaker(input: string,data: {workingTotal: string,
     if (["1","2","3","4","5","6","7","8","9","0"].includes(input)){
         if (data.operation === ".") {
             handleDecimal(input, data);
-        } else if (data.operation === "(-)") {
-            handleNegative(input, data);
+        } else if (data.workingTotal.includes(".")) {
+            handleDecimal(input,data);
         } else {
             data.workingTotal+=input;
         }

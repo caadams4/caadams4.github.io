@@ -7,31 +7,35 @@ function App(): JSX.Element  {
   const [workingTotal, setWorkingTotal] = useState<string>("");
   const [calculatingTotal, setCalculatingTotal] = useState<string>("");
   const [operation, setOperation] = useState<string>("");
+  const [calcDisp, setCalcDisp] = useState<string>("");
+
   //TODO create a stringbuilder for calc display
 
   const handleInput = (input: string) => {
+
     let calcData = {workingTotal, calculatingTotal, operation};
-    
     let newObj = offShoreDecisionMaker(input, calcData);
+
+    if (input === "AC") {
+      setCalculatingTotal("");
+      setWorkingTotal("");
+      setOperation("");
+      newObj.workingTotal = "";
+      newObj.calculatingTotal = "";
+      newObj.operation = "";
+      setCalculatingTotal("");
+    } else if (input === "C") {
+      setWorkingTotal("");
+      newObj.workingTotal = "";
+    }
 
     setWorkingTotal(newObj.workingTotal);
     setOperation(newObj.operation);
     setCalculatingTotal(newObj.calculatingTotal);
-    //input goes to working total
 
-
-    //setWorkingTotal(workingTotal+input);
-    //setWorkingTotal(prevWorkingTotal=>prevWorkingTotal+input);
     console.log(newObj);
 
-
-
-
-    
-    //offShoreDecisionMaker(input,calcData);
-
-
-    //if operation != "", calcTotal = calcWorking, calcWorking = 0
+    setCalcDisp(newObj.calculatingTotal+newObj.operation+newObj.workingTotal);
 
     }
 
@@ -42,7 +46,7 @@ function App(): JSX.Element  {
   return (
     <div className="App">
       <div>
-          <Display calcSays = {calculatingTotal}></Display>
+          <Display calcSays = {calcDisp}></Display>
           <Buttons newInput = {handleInput} ></Buttons>
       </div>
     </div>
