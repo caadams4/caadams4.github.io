@@ -1,6 +1,4 @@
-
-
-function handleSolve(data: {workingTotal: string, calculatingTotal: string, operation: string})  {
+function handleOperation(data: {workingTotal: string, calculatingTotal: string, operation: string})  {
 
     // takes in calculator data and performs mathematical operation based on operation<string> variable.
 
@@ -47,9 +45,13 @@ function handleDecimal(input: string,data: {workingTotal: string, calculatingTot
     if (data.workingTotal.includes(".")) {  // concatenates string input to the workingTotal if it is aleady a decimal
         data.workingTotal += input;
     } else {    // adds input as multiplied by one tenth to create decimal value
-        data.workingTotal += input;  // adding input as a tenth
+        let workingTotal: number =+ data.workingTotal;  // converting to num
+        let inputNum: number =+ input;                  //
+
+        workingTotal = workingTotal + inputNum * 0.1; // adding input as a tenth
+        data.workingTotal = "" + workingTotal;
+        return data;
     }
-    return data;
 }
 
 function handleNegative(data: {workingTotal: string, calculatingTotal: string, operation: string}) {
@@ -72,10 +74,13 @@ function operationHandler(input: string,data: {workingTotal: string, calculating
 
         // returns data as with desired operation sign value 
 
-    if (["+","-","*","/"].includes(data.operation)) {    // if operation previously inputted..
-        data.calculatingTotal = data.workingTotal;  //variables reset ot handle math operations 
-        data.workingTotal = "";    // switching existing operation to last inputted operation
-    } else {     // assigning operation to input
+    if (data.operation !== "") {    // if operation previously inputted..
+        
+        data.workingTotal = data.calculatingTotal;  //variables reset ot handle math operations 
+        data.workingTotal = "";  
+        data.operation = input  // switching existing operation to last inputted operation
+    } else {
+        data.operation = input;     // assigning operation to input
         data.calculatingTotal = data.workingTotal;
         data.workingTotal = ""; // clearing variables to prepare for follow input and ops
     }
@@ -90,23 +95,19 @@ export function offShoreDecisionMaker(input: string,data: {workingTotal: string,
     
     switch(input) { // handles data based on input from buttons, calls handler functions as necessary
         case ("+"): {
-            data.operation = input;
             return operationHandler(input, data);
         }
         case ("-"): {
-            data.operation = input;
             return operationHandler(input, data);
         }
         case ("*"): {
-            data.operation = input;
             return operationHandler(input, data);
         }
         case ("/"): {
-            data.operation = input;
             return operationHandler(input, data);
         }
         case ("."): { // sets all input to workingTotal varialbe after "." to be a decimal value
-            handleDecimal(input, data);
+            data.operation = input;
             return data;
         }
         case ("(-)"): { // negates workingTotal variable
@@ -115,13 +116,19 @@ export function offShoreDecisionMaker(input: string,data: {workingTotal: string,
         }
         case ("="): {   // calls function to solve equation
             if (["+","-","*","/"].includes(data.operation)) {
-                return handleSolve(data);
+                return handleOperation(data);
             }
             break;
         }
     }
     if (["1","2","3","4","5","6","7","8","9","0"].includes(input)){ // in the input is (basically) an int
-        data.workingTotal+=input;
+        if (data.operation === ".") {
+            handleDecimal(input, data);
+        } else if (data.workingTotal.includes(".")) {
+            handleDecimal(input,data);
+        } else {
+            data.workingTotal+=input;
+        }
     }
     return data;
 }
