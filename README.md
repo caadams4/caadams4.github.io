@@ -8,7 +8,7 @@ React Calculator App found at -> https://caadams4.github.io/react-calculator/
 - created App and components. 
 - In App, and interface is used in creating and passing a calculator data object to an operations file that does most of the data manipulation
 - restyled main portfolio page and react calculator
-- react calculator source code: https://github.com/caadams4/react-calculator
+- react calculator source code: https://github.com/caadams4/react-calculator/tree/master / https://github.com/caadams4/react-calculator
 
 
 --------------------Milestone 3--------------------
