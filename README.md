@@ -1,7 +1,16 @@
 # My Web Developer Portfolio
 myGitPage created for a digital portfolio to document my web developer journey found at -> https://caadams4.github.io/
+React Calculator App found at -> https://caadams4.github.io/react-calculator/
 
 # Change Log
+---------------------Final Sub----------------------
+- Ported Calculator from JS -> React+Hooks+TS
+- created App and components. 
+- In App, and interface is used in creating and passing a calculator data object to an operations file that does most of the data manipulation
+- restyled main portfolio page and react calculator
+- react calculator source code: https://github.com/caadams4/react-calculator/tree/master / https://github.com/caadams4/react-calculator
+
+
 --------------------Milestone 3--------------------
 - TypeScript/React/Hooks: Struggled all week to get off the ground with porting my calculator to react. Jeez. I wasted an unreal amount of time trying and failing (10 hours)
 - App.tsx https://github.com/caadams4/caadams4.github.io/blob/master/my-app/src/App.tsx
@@ -26,12 +35,6 @@ https://github.com/caadams4/caadams4.github.io/blob/master/App.tsx
 - HTML: Added multiple types of text, links, and a title
 - Git: Added a background (shoutout to XP), changed some colors, and designed a calculator. 
 - JS: Created a like button that increments up by one each time clicked. 
- 
-
-# TODO
-- Port calculator app to React Hooks + Typescript
-- Keep polishing UI with bootstrap
-
 
 
 # Failures
