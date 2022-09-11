@@ -1,97 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+/*
+Color Scheme
+ green color:#264233;
+ light green color:#869486;
+ cream color:#ffe3cd;
+ blue color:#0f5c95;
+ salmon color:#f16c6f;
+*/
+
+.container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll; 
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }
+
+.header {
+    vertical-align: middle;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering:geometricPrecision;
+    position: fixed;
+    display: flex;
+    height: 7vh;
+    padding: 0% 8%;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color:#264233;
+    color:#ffe3cd;
+    z-index: 10;
+    font-family: 'Roboto Mono', monospace;
+ }
+
+nav {
+    width: 45%;
+    height: 100%;
+}
+
+nav ol {
+    margin:0;
+    display: flex;
+    height: 100%;
+    padding: 9px 0;
+    list-style: none;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+a {
+    color:#ffe3cd;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#f16c6f;
+}
+
+section a {
+    color:#264233;
+}
+
+section a:hover {
+    color:#f16c6f;
+}
+
+nav ol li {
+    display: flex;
+    align-items: center;
+    height:100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+nav ol li.active {
+    text-align: center;
+    background-color: #0f5c95;
+    color: black;
+    transition: 0.3s ease background-color;
+}
+
+
 body {
-  height: 100%;
-  background: linear-gradient(rgb(26, 70, 153), transparent),
-    linear-gradient(90deg, coral, transparent),
-    linear-gradient(-90deg, coral, transparent);
+    font-smooth: always;
+    color:#0f5c95;
+    font-family: 'Roboto Mono', monospace;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering:geometricPrecision;
+    }
+
+
+h3 {
+    text-align: center;
+    padding-bottom: 15px;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering:geometricPrecision;
 }
 
 h1 {
-  background-color: rgb(18, 6, 71);
-  color: white;
+    text-align: center;
+    padding-bottom: 2vh;
+    coloR: rgba(0, 0, 0, 0.623);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering:geometricPrecision;
 }
 
-#like_button {
-  margin-left: auto;
-  margin-right: auto;
-  color: rgb(211, 161, 12);
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-weight: bold;
-  margin-top: 30px;
+#home {
+    min-height: 100vh;
 }
 
-#likes {
-  margin-bottom: 150px;
+.subsect {
+    width: 600px;
+    margin: 0px;
+    padding-top: 11vh;
+    padding-bottom: 6vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.Calculator {
-  border-radius: 9px;
-  margin-left: auto;
-  margin-right: auto;
-  background: rgb(63, 63, 63);
-  border: 1px solid rgb(0, 0, 0);
-  height: 280px;
-  width: 180px;
-  margin-top: 70px;
-  padding-top: 5px;
-  padding-left: 9px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+#last_sect {
+
+    padding-top: 5vh;
 }
 
-#CalcDisplay {
-  border-radius: 9px;
-  text-align: right;
-  text-align: right;
-  background-color: rgb(146, 173, 123);
-  border: 1px solid rgb(0, 0, 0);
-  line-height: 38px;
-  margin-left: 1px;
-  margin-top: 1px;
-  margin-bottom: 5px;
-  height: 60px;
-  width: 158px;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+.light {
+    background-color: #ffe3cd;
 }
 
-.calc_button {
-  border-radius: 4px;
-  background: rgb(211, 211, 212);
-  border: 1px solid rgb(0, 0, 0);
-  float: left;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 38px;
-  height: 38px;
-  margin-left: 1px;
-  margin-right: 1px;
-  margin-top: 1px;
-  padding: 0;
-  text-align: center;
-  width: 38px;
-}
-#calcEquals {
-  background: rgb(211, 211, 212);
-  border: 1px solid rgb(0, 0, 0);
-  float: left;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 38px;
-  height: 38px;
-  margin-right: 1px;
-  margin-top: 1px;
-  padding: 0;
-  text-align: center;
-  width: 78px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+.light_green {
+    background-color:#869486;
 }
 
-.calc_button:after {
-  content: "";
+.grey {
+    background-color:rgb(51, 51, 51);
 }
 
-.CalcRow:after {
-  clear: both;
-  content: "";
-  display: table;
+/*
+Color Scheme
+ green color:#264233;
+ light green color:#869486;
+ cream color:#ffe3cd;
+ blue color:#0f5c95;
+ salmon color:#f16c6f;
+*/
+
+.projects p {
+    padding-bottom: 20px;
 }
+
+p a {
+    color:#264233;
+}
+
+p a:hover {
+    color:#f16c6f;
+}
+
+.contact1 {
+    color:#869486;
+    text-align: center;
+    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact2 {
+    color:#869486;
+    width: 50%;
+    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    height: 7vh;
+    padding: 0% 8%;
+    justify-content: space-between;
+}
+.contact3 {
+    color:#869486;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact2 a {
+    color:#869486;
+}
+
+
+.download {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.check_it_out {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 15%;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tan {
+    color: #ffe3cd;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 2px;
+    align-items: stretch;
+    background: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: black;
+    margin-top: 0px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+
+  button:hover {
+    cursor: pointer;
+    border-radius: 2px;
+    align-items: stretch;
+    background: #264233;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: white;
+    margin-top: 0px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  /*
+Color Scheme
+ green color:#264233;
+ light green color:#869486;
+ cream color:#ffe3cd;
+ blue color:#0f5c95;
+ salmon color:#f16c6f;
+*/
